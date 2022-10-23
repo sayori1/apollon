@@ -23,6 +23,13 @@ _global_script_class_icons={
 config/name="virtuos"
 config/features=PackedStringArray("4.0", "Forward Plus")
 
+[display]
+
+window/size/viewport_width=600
+window/size/viewport_height=600
+window/size/resizable=false
+window/stretch/mode="viewport"
+
 [rendering]
 
-environment/defaults/default_clear_color=Color(1, 1, 1, 1)
+environment/defaults/default_clear_color=Color(0.172549, 0.117647, 0.192157, 1)

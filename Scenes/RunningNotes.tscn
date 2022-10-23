@@ -1,7 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://b1333ch22j1dc"]
+[gd_scene load_steps=8 format=3 uid="uid://b1333ch22j1dc"]
 
 [ext_resource type="Script" path="res://Scripts/Modes/RunningNotes.gd" id="1_j0hel"]
-[ext_resource type="Script" path="res://Scripts/NotesDrawer.gd" id="2_oofd3"]
+[ext_resource type="Script" path="res://Scripts/Piano.gd" id="4_3p6wy"]
+[ext_resource type="PackedScene" uid="uid://bdd8gpkevnj8d" path="res://Scenes/NotesRender.tscn" id="4_hnj7h"]
+[ext_resource type="Texture2D" uid="uid://ckriy53nx0nvk" path="res://Images/notes 4.png" id="5_dg7em"]
+[ext_resource type="Texture2D" uid="uid://dmuwvh0qq5tot" path="res://Images/Keys/Key Black Relessed.png" id="6_rxqvf"]
+[ext_resource type="Texture2D" uid="uid://dr5a7o7s6pbld" path="res://Images/Keys/Piano.png" id="7_k0clx"]
+[ext_resource type="Texture2D" uid="uid://bl0t41i8d0auo" path="res://Images/Keys/Key White Relessed.png" id="8_vuc71"]
 
 [node name="Scene" type="Control"]
 layout_mode = 3
@@ -12,12 +17,45 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_j0hel")
 
-[node name="Render" type="Control" parent="."]
+[node name="NotesRender" parent="." instance=ExtResource("4_hnj7h")]
+texture_filter = 1
 layout_mode = 1
-anchor_left = 0.321181
-anchor_top = 0.0740741
-anchor_right = 0.678819
-anchor_bottom = 0.239198
+anchors_preset = -1
+anchor_left = 0.00333333
+anchor_top = 0.17
+anchor_bottom = 0.42
+offset_right = -299.0
+offset_bottom = -75.0
+scale = Vector2(2, 2)
+texture = ExtResource("5_dg7em")
+metadata/_edit_use_anchors_ = true
+
+[node name="Piano" type="Control" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchor_top = 0.728333
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
-script = ExtResource("2_oofd3")
+grow_vertical = 0
+script = ExtResource("4_3p6wy")
+whiteNote = ExtResource("8_vuc71")
+blackNote = ExtResource("6_rxqvf")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.658333
+anchor_right = 1.0
+anchor_bottom = 0.733333
+offset_top = -3.05176e-05
+offset_right = -400.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 3)
+texture = ExtResource("7_k0clx")
+stretch_mode = 1
 metadata/_edit_use_anchors_ = true
